@@ -1,0 +1,10 @@
+{
+	"name": "wikimania26-article-guidance",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "node scripts/build-site.mjs",
+		"test": "node --test test-page.mjs test-hosting.mjs"
+	}
+}

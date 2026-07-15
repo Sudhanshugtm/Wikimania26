@@ -9,20 +9,20 @@ function loadPage() {
 	return readFileSync(pagePath, 'utf8');
 }
 
-test('presents the Test Wikipedia prototype context', () => {
+test('presents the Article Guidance invitation', () => {
 	const page = loadPage();
 	assert.match(page, /Wikimania 2026/);
-	assert.match(page, /Try the prototype/);
-	assert.match(page, /Test Wikipedia/);
-	assert.match(page, /give it a try/);
-	assert.match(page, /tell us what worked/);
-	assert.doesNotMatch(page, /A prototype is on its way/);
+	assert.match(page, /Article guidance/);
+	assert.match(page, /helps newer editors/);
+	assert.match(page, /fewer deletions/);
+	assert.match(page, /href="https:\/\/test\.wikipedia\.org\/wiki\/Special:NewArticle"/);
+	assert.match(page, />Try it out</);
 });
 
 test('uses responsive and accessible document structure', () => {
 	const page = loadPage();
 	assert.match(page, /name="viewport"/);
 	assert.match(page, /<main/);
-	assert.match(page, /aria-disabled="true"/);
 	assert.match(page, /@media \(min-width:/);
+	assert.doesNotMatch(page, /Georgia|radial-gradient/);
 });
