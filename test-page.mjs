@@ -18,11 +18,16 @@ test('presents the Article Guidance invitation', () => {
 	assert.match(page, />Try it on Test Wikipedia</);
 	assert.match(page, /<ul class="steps">/);
 	assert.match(page, /Enter an article title/);
-	assert.match(page, /Choose the type of article/);
-	assert.match(page, /Follow relevant guidance/);
+	assert.match(page, /Choose an article type/);
+	assert.match(page, /Add sources if you have any/);
+	assert.match(page, /Start writing/);
+	assert.equal((page.match(/<li>/g) || []).length, 4);
 	assert.match(page, /href="https:\/\/www\.mediawiki\.org\/wiki\/Article_guidance"/);
 	assert.match(page, />Read about the Article guidance project</);
 	assert.doesNotMatch(page, /Early results show fewer deletions/);
+	assert.doesNotMatch(page, /Follow relevant guidance/);
+	assert.doesNotMatch(page, /Opens Test Wikipedia in a new tab/);
+	assert.doesNotMatch(page, /class="note"/);
 });
 
 test('uses responsive and accessible document structure', () => {
