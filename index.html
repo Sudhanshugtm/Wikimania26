@@ -128,11 +128,23 @@
 				<li>Follow relevant guidance as you write.</li>
 			</ul>
 			<div class="actions">
-				<a class="cta" href="https://test.wikipedia.org/wiki/Special:NewArticle" target="_blank" rel="noopener">Try it on Test Wikipedia</a>
-				<p class="note">Opens Test Wikipedia in a new tab.</p>
+				<a class="cta" id="test-wiki-link" href="https://test.wikipedia.org/wiki/Special:NewArticle?useskin=vector-2022" target="_blank" rel="noopener">Try it on Test Wikipedia</a>
+				<p class="note">Opens Test Wikipedia in a new tab with the layout for this screen.</p>
 				<a class="project-link" href="https://www.mediawiki.org/wiki/Article_guidance" target="_blank" rel="noopener">Read about the Article guidance project</a>
 			</div>
 		</article>
 	</main>
+	<script>
+		const testWikiLink = document.querySelector('#test-wiki-link');
+		const mobileViewport = window.matchMedia('(max-width: 767px)');
+
+		function updateTestWikiLink() {
+			const skin = mobileViewport.matches ? 'minerva' : 'vector-2022';
+			testWikiLink.href = `https://test.wikipedia.org/wiki/Special:NewArticle?useskin=${skin}`;
+		}
+
+		updateTestWikiLink();
+		mobileViewport.addEventListener('change', updateTestWikiLink);
+	</script>
 </body>
 </html>

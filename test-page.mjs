@@ -14,7 +14,7 @@ test('presents the Article Guidance invitation', () => {
 	assert.match(page, /Wikimania 2026/);
 	assert.match(page, /Article guidance/);
 	assert.match(page, /helps newer editors/);
-	assert.match(page, /href="https:\/\/test\.wikipedia\.org\/wiki\/Special:NewArticle"/);
+	assert.match(page, /href="https:\/\/test\.wikipedia\.org\/wiki\/Special:NewArticle\?useskin=vector-2022"/);
 	assert.match(page, />Try it on Test Wikipedia</);
 	assert.match(page, /<ul class="steps">/);
 	assert.match(page, /Enter an article title/);
@@ -35,4 +35,12 @@ test('uses responsive and accessible document structure', () => {
 	assert.match(page, /@media \(min-width:/);
 	assert.doesNotMatch(page, /Georgia|radial-gradient/);
 	assert.doesNotMatch(page, /<dialog/);
+});
+
+test('opens Test Wikipedia with a skin matched to the viewport', () => {
+	const page = loadPage();
+	assert.match(page, /Special:NewArticle\?useskin=vector-2022/);
+	assert.match(page, /matchMedia\('\(max-width: 767px\)'\)/);
+	assert.match(page, /mobileViewport\.matches \? 'minerva' : 'vector-2022'/);
+	assert.match(page, /mobileViewport\.addEventListener\('change', updateTestWikiLink\)/);
 });
