@@ -23,6 +23,10 @@ test('uses responsive and accessible document structure', () => {
 	const page = loadPage();
 	assert.match(page, /name="viewport"/);
 	assert.match(page, /<main/);
+	assert.match(page, /<article class="card" aria-labelledby="page-title">/);
+	assert.match(page, /\.card\s*\{/);
+	assert.match(page, /border: 1px solid #a2a9b1/);
 	assert.match(page, /@media \(min-width:/);
 	assert.doesNotMatch(page, /Georgia|radial-gradient/);
+	assert.doesNotMatch(page, /<dialog/);
 });

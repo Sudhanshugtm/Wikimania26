@@ -16,15 +16,29 @@
 
 		body {
 			min-width: 320px;
+			min-height: 100vh;
+			min-height: 100svh;
 			margin: 0;
-			background: #fff;
+			background: #f8f9fa;
 		}
 
 		main {
+			display: grid;
+			place-items: center;
 			width: 100%;
-			max-width: 680px;
-			margin: 0 auto;
-			padding: 48px 20px;
+			min-height: 100vh;
+			min-height: 100svh;
+			padding: 20px;
+		}
+
+		.card {
+			width: 100%;
+			max-width: 560px;
+			padding: 24px;
+			border: 1px solid #a2a9b1;
+			border-radius: 4px;
+			background: #fff;
+			box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 		}
 
 		.context {
@@ -36,17 +50,17 @@
 
 		h1 {
 			margin: 0;
-			font-size: clamp(2rem, 8vw, 2.5rem);
+			font-size: clamp(1.75rem, 7vw, 2rem);
 			line-height: 1.15;
 		}
 
 		.summary {
-			margin: 20px 0 0;
-			font-size: 1.125rem;
+			margin: 16px 0 0;
+			font-size: 1rem;
 			line-height: 1.6;
 		}
 
-		.actions { margin-top: 32px; }
+		.actions { margin-top: 24px; }
 
 		.cta {
 			display: inline-flex;
@@ -74,14 +88,15 @@
 		}
 
 		@media (min-width: 600px) {
-			main { padding: 96px 32px; }
+			main { padding: 48px; }
+			.card { padding: 32px; }
 			.cta { width: auto; }
 		}
 	</style>
 </head>
 <body>
 	<main>
-		<article aria-labelledby="page-title">
+		<article class="card" aria-labelledby="page-title">
 			<p class="context">Wikimania 2026</p>
 			<h1 id="page-title">Article guidance</h1>
 			<p class="summary">Article guidance helps newer editors create well-structured articles that follow community policies. It uses the article title and type to offer relevant guidance as they create. Early results show fewer deletions among guided articles, and we’re continuing to improve it.</p>
