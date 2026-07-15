@@ -60,6 +60,19 @@
 			line-height: 1.6;
 		}
 
+		.steps-title {
+			margin: 20px 0 0;
+			font-size: 1rem;
+		}
+
+		.steps {
+			margin: 8px 0 0;
+			padding-left: 1.25rem;
+			line-height: 1.5;
+		}
+
+		.steps li + li { margin-top: 6px; }
+
 		.actions { margin-top: 24px; }
 
 		.cta {
@@ -87,6 +100,14 @@
 			font-size: 0.875rem;
 		}
 
+		.project-link {
+			display: inline-block;
+			margin-top: 18px;
+			color: #36c;
+		}
+
+		.project-link:focus-visible { outline: 2px solid #202122; outline-offset: 2px; }
+
 		@media (min-width: 600px) {
 			main { padding: 48px; }
 			.card { padding: 32px; }
@@ -99,10 +120,17 @@
 		<article class="card" aria-labelledby="page-title">
 			<p class="context">Wikimania 2026</p>
 			<h1 id="page-title">Article guidance</h1>
-			<p class="summary">Article guidance helps newer editors create well-structured articles that follow community policies. It uses the article title and type to offer relevant guidance as they create. Early results show fewer deletions among guided articles, and we’re continuing to improve it.</p>
+			<p class="summary">Article guidance helps newer editors create well-structured articles that follow community policies.</p>
+			<h2 class="steps-title">How it works</h2>
+			<ul class="steps">
+				<li>Enter an article title.</li>
+				<li>Choose the type of article you want to create.</li>
+				<li>Follow relevant guidance as you write.</li>
+			</ul>
 			<div class="actions">
-				<a class="cta" href="https://test.wikipedia.org/wiki/Special:NewArticle" target="_blank" rel="noopener">Try it out</a>
-				<p class="note">Opens Test Wikipedia.</p>
+				<a class="cta" href="https://test.wikipedia.org/wiki/Special:NewArticle" target="_blank" rel="noopener">Try it on Test Wikipedia</a>
+				<p class="note">Opens Test Wikipedia in a new tab.</p>
+				<a class="project-link" href="https://www.mediawiki.org/wiki/Article_guidance" target="_blank" rel="noopener">Read about the Article guidance project</a>
 			</div>
 		</article>
 	</main>

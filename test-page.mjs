@@ -14,9 +14,15 @@ test('presents the Article Guidance invitation', () => {
 	assert.match(page, /Wikimania 2026/);
 	assert.match(page, /Article guidance/);
 	assert.match(page, /helps newer editors/);
-	assert.match(page, /fewer deletions/);
 	assert.match(page, /href="https:\/\/test\.wikipedia\.org\/wiki\/Special:NewArticle"/);
-	assert.match(page, />Try it out</);
+	assert.match(page, />Try it on Test Wikipedia</);
+	assert.match(page, /<ul class="steps">/);
+	assert.match(page, /Enter an article title/);
+	assert.match(page, /Choose the type of article/);
+	assert.match(page, /Follow relevant guidance/);
+	assert.match(page, /href="https:\/\/www\.mediawiki\.org\/wiki\/Article_guidance"/);
+	assert.match(page, />Read about the Article guidance project</);
+	assert.doesNotMatch(page, /Early results show fewer deletions/);
 });
 
 test('uses responsive and accessible document structure', () => {
