@@ -16,6 +16,7 @@ test('build produces a worker that serves the Article Guidance page', async () =
 
 	assert.equal(response.status, 200);
 	assert.match(response.headers.get('content-type'), /text\/html/);
+	assert.equal(response.headers.get('cache-control'), 'no-store');
 	assert.match(html, /Article guidance/);
 	assert.match(html, /Special:NewArticle/);
 });
