@@ -12,8 +12,11 @@ function loadPage() {
 test('presents the Test Wikipedia prototype context', () => {
 	const page = loadPage();
 	assert.match(page, /Wikimania 2026/);
+	assert.match(page, /Try the prototype/);
 	assert.match(page, /Test Wikipedia/);
-	assert.match(page, /Prototype coming soon/);
+	assert.match(page, /give it a try/);
+	assert.match(page, /tell us what worked/);
+	assert.doesNotMatch(page, /A prototype is on its way/);
 });
 
 test('uses responsive and accessible document structure', () => {
